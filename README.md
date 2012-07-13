@@ -2,7 +2,7 @@ Transliterator
 =======================
 
 Transliterator transliterate into Latin characters of Cyrillic characters.
-Use the (international standard ISO 9)[http://en.wikipedia.org/wiki/ISO_9].
+Use the [international standard ISO 9](http://en.wikipedia.org/wiki/ISO_9).
 
 Transliterator can be used as either a widget or a controller filter.
 
