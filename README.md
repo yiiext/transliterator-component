@@ -19,3 +19,12 @@ Usage as validation rule:
 ~~~
 array('text', 'filter', 'filter' => array($obj = new Transliterator, 'transliterate')),
 ~~~
+
+
+Usage as widget:
+------------
+~~~
+$this->beginWidget('Transliterator');
+echo $model->content;
+$this->endWidget('Transliterator');
+~~~
