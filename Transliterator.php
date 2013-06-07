@@ -21,7 +21,7 @@
  * @link https://github.com/yiiext
  * @see http://en.wikipedia.org/wiki/ISO_9
  */
-class Transliterator extends COutputProcessor
+class Transliterator extends CApplicationComponent
 {
 	/**
 	 * System A (with diacritics).
@@ -145,16 +145,6 @@ class Transliterator extends COutputProcessor
 	public function getTransliterationTable()
 	{
 		return Transliterator::$tables[$this->standard];
-	}
-
-	/**
-	 * Processes the captured output.
-	 * @param string $output the captured output to be processed
-	 */
-	public function processOutput($output)
-	{
-		$output = $this->transliterate($output);
-		parent::processOutput($output);
 	}
 
 	/**
