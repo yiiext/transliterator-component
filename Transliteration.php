@@ -1,16 +1,16 @@
 <?php
 /**
- * Transliterator class file.
+ * Transliteration class file.
  *
  * @author Veaceslav Medvedev <slavcopost@gmail.com>
  * @license http://www.opensource.org/licenses/bsd-license.php
  * @link https://github.com/yiiext
  */
 /**
- * Transliterator transliterate into Latin characters of Cyrillic characters.
+ * Transliteration transliterate into Latin characters of Cyrillic characters.
  * Use the {@link http://en.wikipedia.org/wiki/ISO_9 international standard ISO 9}.
  *
- * Transliterator can be used as either a widget or a controller filter.
+ * Transliteration can be used as either a widget or a controller filter.
  *
  * @property string $standard
  * @property string $transliterationTable
@@ -21,7 +21,7 @@
  * @link https://github.com/yiiext
  * @see http://en.wikipedia.org/wiki/ISO_9
  */
-class Transliterator extends CApplicationComponent
+class Transliteration extends CApplicationComponent
 {
 	/**
 	 * System A (with diacritics).
@@ -36,7 +36,7 @@ class Transliterator extends CApplicationComponent
 	 * @var array Transliteration tables of Slavic alphabets.
 	 */
 	public static $tables = array(
-		Transliterator::GOST_779A => array(
+		Transliteration::GOST_779A => array(
 			'А' => 'A', 'а' => 'a',
 			'Б' => 'B', 'б' => 'b',
 			'В' => 'V', 'в' => 'v',
@@ -73,7 +73,7 @@ class Transliterator extends CApplicationComponent
 			'№' => '#', 'Ӏ' => '‡',
 			'’' => '`', 'ˮ' => '¨',
 		),
-		Transliterator::GOST_779B => array(
+		Transliteration::GOST_779B => array(
 			'А' => 'A', 'а' => 'a',
 			'Б' => 'B', 'б' => 'b',
 			'В' => 'V', 'в' => 'v',
@@ -115,7 +115,7 @@ class Transliterator extends CApplicationComponent
 	/**
 	 * @var string
 	 */
-	private $_standard = Transliterator::GOST_779B;
+	private $_standard = Transliteration::GOST_779B;
 
 	/**
 	 * @param $value
@@ -123,8 +123,8 @@ class Transliterator extends CApplicationComponent
 	 */
 	public function setStandard($value)
 	{
-		if(!isset(Transliterator::$tables[$value])) {
-			throw new CException(Yii::t('yiiext', 'Invalid transliterator standard {standard}', array(
+		if(!isset(Transliteration::$tables[$value])) {
+			throw new CException(Yii::t('yiiext', 'Invalid Transliteration standard {standard}', array(
 					'{standard}' => $value,
 				)));
 		}
@@ -144,7 +144,7 @@ class Transliterator extends CApplicationComponent
 	 */
 	public function getTransliterationTable()
 	{
-		return Transliterator::$tables[$this->standard];
+		return Transliteration::$tables[$this->standard];
 	}
 
 	/**
